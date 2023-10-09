@@ -1,2 +1,2 @@
 # crud_csharp
-Crud C# Desenvolvido com Entity Framework com UI gerada pelo aspnet code generator
+CRUD C# Desenvolvido com Entity Framework, UI gerada com aspnet code generator com algumas modificações feitas por mim.
