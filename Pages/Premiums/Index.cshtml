@@ -1,0 +1,61 @@
+@page
+@model cscrud.Pages.Premiums.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create"><button class="btn btn-success">Create New</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium[0].Student)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Premium)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.Email)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">
+                        <button class="btn btn-primary"> Edit</button>
+                    </a> 
+                    <a asp-page="./Details" asp-route-id="@item.Id">
+                        <button class="btn btn-secondary">Details</button>
+                    </a> 
+                    <a asp-page="./Delete" asp-route-id="@item.Id">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
